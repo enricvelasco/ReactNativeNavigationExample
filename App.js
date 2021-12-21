@@ -1,8 +1,8 @@
 import React from 'react';
 import {useColorScheme} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {LoginStatusProvider} from './contexts/loginStatusContext';
-import {MainNavigation} from './client/navigation/main';
+import {LoginStatusProvider} from './common/contexts/loginStatusContext';
+import {MainNavigation} from './common/client/navigation/main';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';

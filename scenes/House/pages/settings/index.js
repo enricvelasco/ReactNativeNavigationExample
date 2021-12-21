@@ -1,14 +1,16 @@
 import React from 'react';
 import {Button, StyleSheet, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import useLoginStatus from '../../common/hooks/useLoginStatus';
 
-const Landing = () => {
-  const {setIsSignedIn} = useLoginStatus();
+const Settings = ({navigation, route}) => {
+  const {params} = route;
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Landing</Text>
-      <Button title="set Login" onPress={() => setIsSignedIn(true)} />
+      <Button
+        title={'Back'}
+        onPress={() => navigation.navigate(params.backNavigation)}
+      />
+      <Text>Settings HOUSE</Text>
     </SafeAreaView>
   );
 };
@@ -16,9 +18,9 @@ const Landing = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
   },
 });
 
-export default Landing;
+export default Settings;

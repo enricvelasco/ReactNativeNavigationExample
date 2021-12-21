@@ -7,7 +7,7 @@ import {
   Button,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import useLoginStatus from '../../hooks/useLoginStatus';
+import useLoginStatus from '../../common/hooks/useLoginStatus';
 
 const wait = timeout => {
   return new Promise(resolve => setTimeout(resolve, timeout));

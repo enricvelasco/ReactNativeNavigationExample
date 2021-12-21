@@ -1,6 +1,6 @@
-import {HouseNavigation} from '../navigation/house';
-import {ParkingNavigation} from '../navigation/parking';
-import {HotelNavigation} from '../navigation/hotel';
+import {HouseNavigation} from '../../../scenes/House/navigation';
+import {ParkingNavigation} from '../../../scenes/Parking/navigation';
+import {HotelNavigation} from '../../../scenes/Hotel/navigation';
 
 export const assetTypes = [
   {
