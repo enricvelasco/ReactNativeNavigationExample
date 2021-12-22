@@ -1,11 +1,13 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Main from '../pages/main';
 import Settings from '../pages/settings';
 import {HotelHomeIcon} from '../../../common/components/ui/atoms/icons/hotelHome';
 import {SettingsIcon} from '../../../common/components/ui/atoms/icons/settings';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 const menuItems = {
   MAIN: 'HotelMain',
@@ -36,7 +38,22 @@ const getScreenOptions = ({route}) => ({
 
 export const HotelNavigation = ({navigation}) => {
   return (
-    <Tab.Navigator screenOptions={getScreenOptions}>
+    <Drawer.Navigator screenOptions={{headerShown: false}}>
+      <Drawer.Screen
+        name={menuItems.MAIN}
+        component={Main}
+        initialParams={defaultParams}
+      />
+      <Drawer.Screen
+        name={menuItems.SETTINGS}
+        component={Settings}
+        initialParams={defaultParams}
+      />
+    </Drawer.Navigator>
+  );
+};
+
+/* <Tab.Navigator screenOptions={getScreenOptions}>
       <Tab.Screen
         name={menuItems.MAIN}
         component={Main}
@@ -47,6 +64,4 @@ export const HotelNavigation = ({navigation}) => {
         component={Settings}
         initialParams={defaultParams}
       />
-    </Tab.Navigator>
-  );
-};
+    </Tab.Navigator> */

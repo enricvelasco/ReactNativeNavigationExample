@@ -1,14 +1,15 @@
 import React from 'react';
-import {Button, StyleSheet, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import useLoginStatus from '../../common/hooks/useLoginStatus';
+import {Button, StyleSheet, Text} from 'react-native';
+import useLoginStatus from '../../../../common/hooks/useLoginStatus';
 
-const Landing = () => {
+const NewsScreen = () => {
   const {setIsSignedIn} = useLoginStatus();
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Landing (NEWS)</Text>
-      <Button title="set Login" onPress={() => setIsSignedIn(true)} />
+      <Text>NN NEWS</Text>
+      <Button title={'Login'} onPress={() => setIsSignedIn(true)} />
     </SafeAreaView>
   );
 };
@@ -16,9 +17,9 @@ const Landing = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
   },
 });
 
-export default Landing;
+export default NewsScreen;

@@ -1,16 +1,17 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Landing from '../../../../pages/landing';
+import LoginScreen from '../../pages/login';
 
 const Stack = createNativeStackNavigator();
 
-export const UnregisteredNavigation = () => {
+const UnregisteredAlfredNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Landing"
+      initialRouteName="Login"
       screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Landing" component={Landing} />
-      {/* <Stack.Screen name="Home" component={Home} /> */}
+      <Stack.Screen name="Login" component={LoginScreen} />
     </Stack.Navigator>
   );
 };
+
+export default UnregisteredAlfredNavigation;

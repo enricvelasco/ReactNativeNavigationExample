@@ -1,11 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, Button} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {assetsMock} from '../../common/mocks/assets';
+import {assetsMock} from '../../mocks/assets';
 import {assetTypes} from '../../common/client/assetsConfig';
 import useLoginStatus from '../../common/hooks/useLoginStatus';
-
-const insertNavigations = assetTypes.map(item => item.navigationComponent);
 
 const ButtonsList = ({navigation}) => {
   const buttons = assetsMock.map(item => {
@@ -26,7 +24,6 @@ const Home = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {insertNavigations}
       <Text>Home</Text>
       <ButtonsList navigation={navigation} />
       <Button title="set LOGOUT" onPress={() => setIsSignedIn(false)} />

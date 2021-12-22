@@ -1,11 +1,11 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../../../../pages/home';
-import {assetTypes} from '../../assetsConfig';
+import {assetTypes} from '../../../../common/client/assetsConfig';
 
 const Stack = createNativeStackNavigator();
 
-export const RegisteredNavigation = () => {
+export const AlfredLoggedNavigation = () => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
