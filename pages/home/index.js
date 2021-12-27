@@ -4,7 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {assetTypes} from '../../common/client/assetsConfig';
 import useLoginStatus from '../../common/hooks/useLoginStatus';
 
-const ButtonsList = ({navigation, list}) => {
+const ButtonsList = ({navigation, list = []}) => {
   const buttons = list.map(item => {
     const type = assetTypes.find(val => val.assetType === item.type);
     return (

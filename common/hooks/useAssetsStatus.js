@@ -3,7 +3,7 @@ import GetAssetsList from '../../core/domain/asset/respositories/getAssetsList';
 
 const useAssetsStatus = () => {
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getData = useCallback(() => {
     setIsLoading(true);
@@ -11,7 +11,7 @@ const useAssetsStatus = () => {
   }, []);
 
   useEffect(() => {
-    setIsLoading(false);
+    data && setIsLoading(false);
   }, [data]);
 
   useEffect(() => {
