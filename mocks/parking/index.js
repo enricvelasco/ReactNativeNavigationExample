@@ -1,0 +1,60 @@
+export default {
+  parks: [
+    {
+      id: '1',
+      title: 'Parking Casa',
+      direction: 'Carrer de Ricart, 29, 08004 Barcelona, España',
+      latitude: '41.372957456165466',
+      longitude: '2.157791498798673',
+    },
+    {
+      id: '2',
+      title: 'Parking Alfred',
+      direction: "Carrer d'Aragó, 182, 08001 Barcelona, España",
+      latitude: '41.3867874972521',
+      longitude: '2.158002764550332',
+    },
+    {
+      id: '3',
+      title: 'Parking 3',
+      direction: "Carrer d'Aribau, 54 Cram hotel, 08001 Barcelona, España",
+      latitude: '41.387979346453534',
+      longitude: '2.159988873804224',
+    },
+    {
+      id: '4',
+      title: 'Parking 4',
+      direction: 'Carrer del Pare Coll, 17, 17005 Gerona, España',
+      latitude: '41.97859852692707',
+      longitude: '2.8120612806955023',
+    },
+    {
+      id: '5',
+      title: 'Parking 5',
+      direction: 'Carrer de la Creu, 57acc, 17002 Gerona, España',
+      latitude: '41.976450743592494',
+      longitude: '2.817555757932837',
+    },
+    {
+      id: '6',
+      title: 'Parking 6',
+      direction: 'Calle de José Abascal, 39, 28003 Madrid, España',
+      latitude: '40.43848542988644',
+      longitude: '-3.6970712839775217',
+    },
+    {
+      id: '7',
+      title: 'Parking 7',
+      direction: 'Calle de José Ortega y Gasset, 77, 28006 Madrid, España',
+      latitude: '40.42990841748241',
+      longitude: '-3.6724283777296023',
+    },
+    {
+      id: '8',
+      title: 'Parking 8',
+      direction: 'La Mafia, Avenida del Gran Capitán, 14006 Córdoba, España',
+      latitude: '37.892587279889',
+      longitude: '-4.783446107234283',
+    },
+  ],
+};

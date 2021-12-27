@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Button, StyleSheet, Text} from 'react-native';
+import {StyleSheet, ActivityIndicator} from 'react-native';
 
-const NewsScreen = ({navigation}) => {
+const LoadingScreen = () => {
+  console.log('LOADING_SCREEN::::::::::');
   return (
     <SafeAreaView style={styles.container}>
-      <Text>HILTON NEWS</Text>
-      <Button title={'To Login'} onPress={() => navigation.navigate('Login')} />
+      <ActivityIndicator size="large" />
     </SafeAreaView>
   );
 };
@@ -14,9 +14,9 @@ const NewsScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
 });
 
-export default NewsScreen;
+export default LoadingScreen;

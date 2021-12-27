@@ -1,17 +1,16 @@
 import React from 'react';
 import {StyleSheet, Text, Button} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {assetsMock} from '../../mocks/assets';
 import {assetTypes} from '../../common/client/assetsConfig';
 import useLoginStatus from '../../common/hooks/useLoginStatus';
 
-const ButtonsList = ({navigation}) => {
-  const buttons = assetsMock.map(item => {
+const ButtonsList = ({navigation, list}) => {
+  const buttons = list.map(item => {
     const type = assetTypes.find(val => val.assetType === item.type);
     return (
       <Button
         key={item.id}
-        title={item.name}
+        title={item.alias}
         onPress={() => navigation.navigate(type.link)}
       />
     );
@@ -19,13 +18,14 @@ const ButtonsList = ({navigation}) => {
   return <>{buttons}</>;
 };
 
-const Home = ({navigation}) => {
+const Home = ({navigation, route}) => {
   const {setIsSignedIn} = useLoginStatus();
+  const {data} = route.params;
 
   return (
     <SafeAreaView style={styles.container}>
       <Text>Home</Text>
-      <ButtonsList navigation={navigation} />
+      <ButtonsList navigation={navigation} list={data} />
       <Button title="set LOGOUT" onPress={() => setIsSignedIn(false)} />
     </SafeAreaView>
   );
