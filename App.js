@@ -1,17 +1,19 @@
 import React from 'react';
-import {useColorScheme} from 'react-native';
+// import {useColorScheme} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {LoginStatusProvider} from './common/contexts/loginStatusContext';
 import Navigation from './common/navigation';
+import {AppContextProvider} from './common/contexts/utils/AppContextProvider';
+import ModalsManagement from './common/modals';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  // const isDarkMode = useColorScheme() === 'dark';
   return (
-    <LoginStatusProvider>
+    <AppContextProvider>
       <SafeAreaProvider>
         <Navigation />
+        <ModalsManagement />
       </SafeAreaProvider>
-    </LoginStatusProvider>
+    </AppContextProvider>
   );
 };
 

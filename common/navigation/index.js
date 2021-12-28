@@ -8,7 +8,7 @@ import useLoginStatus from '../hooks/useLoginStatus';
  * nunez = NyN1
  * hilton = Hilton1
  */
-const partner = partnersList.find(item => item.idPartner === 'Hilton1');
+const partner = partnersList.find(item => item.idPartner === 'NyN1');
 
 const Navigation = () => {
   const {isSignedIn} = useLoginStatus();
