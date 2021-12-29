@@ -1,31 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
-import {SafeAreaView, StyleSheet, Text, useColorScheme} from 'react-native';
+// import {useColorScheme} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import Navigation from './common/navigation';
+import {AppContextProvider} from './common/contexts/utils/AppContextProvider';
+import ModalsManagement from './common/modals';
+import {StatusBar} from 'react-native';
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+const STYLES = ['default', 'dark-content', 'light-content'];
 
+const App = () => {
+  // const isDarkMode = useColorScheme() === 'dark';
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Demo</Text>
-    </SafeAreaView>
+    <AppContextProvider>
+      <SafeAreaProvider>
+        <StatusBar barStyle={STYLES[2]} hidden={false} translucent={true} />
+        <Navigation />
+        <ModalsManagement />
+      </SafeAreaProvider>
+    </AppContextProvider>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
 export default App;
+
+// export {default} from './storybook';

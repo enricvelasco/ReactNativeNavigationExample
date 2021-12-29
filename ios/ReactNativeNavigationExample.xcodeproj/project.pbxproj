@@ -114,7 +114,6 @@
 				7B8D6560FC583D417EF8FA11 /* Pods-ReactNativeNavigationExample-ReactNativeNavigationExampleTests.debug.xcconfig */,
 				AB16024A50EB981107A71F93 /* Pods-ReactNativeNavigationExample-ReactNativeNavigationExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
