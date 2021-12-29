@@ -20,6 +20,7 @@ const BottomSwipeModal = ({config, visible = true, onHide = () => {}}) => {
       useNativeDriverForBackdrop
       onBackdropPress={hideModal}
       swipeDirection={['down']}
+      propagateSwipe={true}
       style={{margin: 0, justifyContent: 'flex-end'}}>
       {config?.component && (
         <config.component onClose={hideModal} {...config?.props} />
@@ -29,4 +30,4 @@ const BottomSwipeModal = ({config, visible = true, onHide = () => {}}) => {
   );
 };
 
-export default BottomSwipeModal;
+export default React.memo(BottomSwipeModal);

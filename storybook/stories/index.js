@@ -1,0 +1,9 @@
+import './atoms/Button/Button.stories';
+import './atoms/Button/IconButton.stories';
+import './atoms/Icons/Icons.stories';
+import './atoms/TextInput/TextInput.stories';
+import './atoms/Text/Text.stories';
+import './atoms/Image/Image.stories';
+import './molecules/NewArticle/NewArticle.stories';
+import './organisms/NewsList/NewsList.stories';
+import './templates/NewsTemplate/NewsTemplate.stories';

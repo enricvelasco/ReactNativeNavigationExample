@@ -3,11 +3,11 @@ import {
   StyleSheet,
   View,
   Text,
-  Button,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
 import TextInput from '../../../../common/components/ui/atoms/textInput';
+import PrimaryButton from '../../../../common/components/ui/atoms/primaryButton';
 
 export const LoginModal = ({onClose, onLogin}) => {
   const setLogin = () => {
@@ -22,7 +22,7 @@ export const LoginModal = ({onClose, onLogin}) => {
         <Text style={styles.contentTitle}>Login 👋!</Text>
         <TextInput placeholder={'Email'} />
         <TextInput placeholder={'Password'} />
-        <Button onPress={setLogin} title="Set Login" />
+        <PrimaryButton title={'Iniciar'} onPress={setLogin} />
       </View>
     </KeyboardAvoidingView>
   );
@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     padding: 22,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 4,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
     height: 300,
   },
   contentTitle: {
