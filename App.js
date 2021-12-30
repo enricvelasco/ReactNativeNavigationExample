@@ -9,7 +9,6 @@ import {StatusBar} from 'react-native';
 const STYLES = ['default', 'dark-content', 'light-content'];
 
 const App = () => {
-  // const isDarkMode = useColorScheme() === 'dark';
   return (
     <AppContextProvider>
       <SafeAreaProvider>

@@ -14,7 +14,7 @@ const windowHeight = Dimensions.get('window').height;
 
 export const NewDetailModal = ({imageURL, title, description}) => {
   return (
-    <View style={styles.content}>
+    <View style={styles.container}>
       <ScrollView>
         <TouchableHighlight>
           <>
@@ -32,9 +32,6 @@ export const NewDetailModal = ({imageURL, title, description}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-  content: {
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
