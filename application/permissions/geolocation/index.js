@@ -29,23 +29,17 @@ export const getCurrentPermission = async () => {
   return await RNLocation.getCurrentPermission();
 };
 
-export const subscribeToLocationUpdates = () => {
-  return RNLocation.subscribeToLocationUpdates(location => {
-
-  });
+export const subscribeToLocationUpdates = async () => {
+  return await RNLocation.subscribeToLocationUpdates();
 };
 
-export const subscribeToPermissionsUpdates = () => {
-  RNLocation.subscribeToPermissionUpdates(locations => {
-
-  });
+export const subscribeToPermissionsUpdates = async () => {
+  return await RNLocation.subscribeToPermissionUpdates();
 };
 
 export const getLocation = async () => {
-  subscribeToPermissionsUpdates();
-  subscribeToLocationUpdates();
   const permission = await checkGeolocationPermission();
-  // console.log('PERMISSIONS::::', permission);
+  console.log('PERMISSIONS::::', permission);
   if (permission) {
     return await RNLocation.getLatestLocation({timeout: 500});
   } else {

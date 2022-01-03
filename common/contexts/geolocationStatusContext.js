@@ -1,8 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
-import {
-  getLocation,
-  subscribeToLocationUpdates,
-} from '../../application/permissions/geolocation';
+import {getLocation} from '../../application/permissions/geolocation';
+import RNLocation from 'react-native-location';
 
 const GeolocationStatusContext = createContext();
 export default GeolocationStatusContext;
@@ -12,15 +10,20 @@ export const GeolocationStatusContextProvider = ({children}) => {
   const [latitude, setLatitude] = useState(null);
 
   const updateLocation = location => {
-    // setLongitude(location.longitude || null);
-    setLongitude(41.3729513317664);
-    // setLatitude(location.latitude || null);
-    setLatitude(2.1577972773379717);
+    setLongitude(location.longitude || null);
+    setLatitude(location.latitude || null);
   };
 
   useEffect(() => {
     getLocation().then(location => {
       updateLocation(location);
+    });
+
+    RNLocation.subscribeToLocationUpdates(locations => {
+      updateLocation(locations[0]);
+    });
+    RNLocation.subscribeToPermissionUpdates(locations => {
+      updateLocation(locations[0]);
     });
   }, []);
 

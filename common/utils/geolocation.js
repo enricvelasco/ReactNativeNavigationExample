@@ -47,3 +47,11 @@ export const getDistanceBetweenTwoCoordinates = (position1, position2) => {
   }
   return dist;
 }; */
+
+export const distanceFormat = value => {
+  if (value < 1) {
+    return `${Math.round(value * 100)}m`;
+  } else {
+    return `${value.toFixed(2)}Km`;
+  }
+};

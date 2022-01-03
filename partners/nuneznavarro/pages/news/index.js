@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import useLoginStatus from '../../../../common/hooks/useLoginStatus';
 import useModalStatus from '../../../../common/hooks/useModalStatus';
 import {LoginModal} from '../../modals/login';
@@ -40,7 +40,7 @@ const NewsScreen = ({route}) => {
   };
 
   const showParkingModal = () => {
-    parkingModalConfig.props = {latitude, longitude};
+    parkingModalConfig.props = {longitude, latitude};
     setConfig(parkingModalConfig);
     setShowBottomSwipeModal(true);
   };
