@@ -36,7 +36,7 @@ export const ParkingListModal = ({latitude, longitude}) => {
                 Distancia: {distanceFormat(distance)}
               </Text>
             </TouchableOpacity>
-          )
+          );
         })}
     </View>
   );

@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import NewsScreen from '../../pages/news';
 import useNewsStatus from '../../../../common/hooks/useNewsStatus';
 import LoadingScreen from '../../../../pages/loading';
+import GeolocationData from '../../../../pages/geolocationData';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,11 @@ const UnregisteredNunezNavigation = () => {
           <Stack.Screen
             name="News"
             component={NewsScreen}
+            initialParams={{data}}
+          />
+          <Stack.Screen
+            name="GeolocationData"
+            component={GeolocationData}
             initialParams={{data}}
           />
         </Stack.Navigator>

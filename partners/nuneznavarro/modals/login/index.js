@@ -9,7 +9,7 @@ import {
 import TextInput from '../../../../common/components/ui/atoms/textInput';
 import PrimaryButton from '../../../../common/components/ui/atoms/primaryButton';
 
-export const LoginModal = ({onClose, onLogin}) => {
+export const LoginModal = ({onClose, onLogin, onGoToLocation}) => {
   const setLogin = () => {
     onClose();
     onLogin();
@@ -23,6 +23,7 @@ export const LoginModal = ({onClose, onLogin}) => {
         <TextInput placeholder={'Email'} />
         <TextInput placeholder={'Password'} />
         <PrimaryButton title={'Iniciar'} onPress={setLogin} />
+        <PrimaryButton title={'Location Data'} onPress={onGoToLocation} />
       </View>
     </KeyboardAvoidingView>
   );

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import useLoginStatus from '../../../../common/hooks/useLoginStatus';
 import useModalStatus from '../../../../common/hooks/useModalStatus';
 import {LoginModal} from '../../modals/login';
@@ -7,7 +7,7 @@ import {NewDetailModal} from '../../modals/newDetail';
 import {UseGeolocationStatus} from '../../../../common/hooks/useGeolocationStatus';
 import {ParkingListModal} from '../../modals/parkingsList';
 
-const NewsScreen = ({route}) => {
+const NewsScreen = ({navigation, route}) => {
   const {longitude, latitude} = UseGeolocationStatus();
   const {setIsSignedIn} = useLoginStatus();
   const {setShowBottomSwipeModal, setConfig} = useModalStatus();
@@ -17,6 +17,7 @@ const NewsScreen = ({route}) => {
     component: LoginModal,
     props: {
       onLogin: () => setIsSignedIn(true),
+      onGoToLocation: () => navigation.navigate('GeolocationData'),
     },
   };
 
