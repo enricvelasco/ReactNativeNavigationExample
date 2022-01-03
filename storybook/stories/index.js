@@ -1,5 +1,6 @@
 import './atoms/Button/Button.stories';
 import './atoms/Button/IconButton.stories';
+import './atoms/Button/FloatingButton.stories';
 import './atoms/Icons/Icons.stories';
 import './atoms/TextInput/TextInput.stories';
 import './atoms/Text/Text.stories';

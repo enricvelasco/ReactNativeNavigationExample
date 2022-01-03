@@ -7,6 +7,10 @@ import {ParkingHomeIcon} from './parkingHome';
 import {ServicesIcon} from './services';
 import {SettingsIcon} from './settings';
 import {UserIcon} from './user';
+import {ChevronDownIcon} from './chevronDown';
+import {ChevronUpIcon} from './chevronUp';
+import {ChevronLeftIcon} from './chevronLeft';
+import {ChevronRightIcon} from './chevronRight';
 
 const IconsList = ({color, size}) => (
   <>
@@ -18,6 +22,10 @@ const IconsList = ({color, size}) => (
     <ServicesIcon color={color} size={size} />
     <SettingsIcon color={color} size={size} />
     <UserIcon color={color} size={size} />
+    <ChevronDownIcon color={color} size={size} />
+    <ChevronUpIcon color={color} size={size} />
+    <ChevronLeftIcon color={color} size={size} />
+    <ChevronRightIcon color={color} size={size} />
   </>
 );
 
