@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState} from 'react';
-import {getLocation} from '../../application/permissions/geolocation';
+import {initGeolocation} from '../../application/permissions/geolocation';
 import RNLocation from 'react-native-location';
 
 const GeolocationStatusContext = createContext();
@@ -15,15 +15,11 @@ export const GeolocationStatusContextProvider = ({children}) => {
   };
 
   useEffect(() => {
-    getLocation().then(location => {
-      updateLocation(location);
-    });
-
-    RNLocation.subscribeToLocationUpdates(locations => {
-      updateLocation(locations[0]);
-    });
-    RNLocation.subscribeToPermissionUpdates(locations => {
-      updateLocation(locations[0]);
+    initGeolocation().then(granted => {
+      granted &&
+        RNLocation.subscribeToLocationUpdates(locations =>
+          updateLocation(locations[0]),
+        );
     });
   }, []);
 
