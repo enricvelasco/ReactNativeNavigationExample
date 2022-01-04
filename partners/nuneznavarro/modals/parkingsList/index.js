@@ -10,7 +10,7 @@ import {
 
 const windowHeight = Dimensions.get('window').height;
 
-export const ParkingListModal = ({latitude, longitude}) => {
+export const ParkingListModal = ({latitude, longitude, onPressItem}) => {
   const [data, isLoading] = useParkingStatus();
   const userPosition = {longitude, latitude};
 
@@ -29,7 +29,10 @@ export const ParkingListModal = ({latitude, longitude}) => {
           );
 
           return (
-            <TouchableOpacity key={key} style={styles.itemContainer}>
+            <TouchableOpacity
+              key={key}
+              style={styles.itemContainer}
+              onPress={() => onPressItem(item)}>
               <Text type={'infoTitle'}>{item.title}</Text>
               <Text type={'infoDefault'}>{item.direction}</Text>
               <Text type={'infoDefault'}>

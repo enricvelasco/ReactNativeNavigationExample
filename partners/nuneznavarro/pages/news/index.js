@@ -6,6 +6,7 @@ import NewsTemplate from '../../../../common/components/ui/templates/NewsTemplat
 import {NewDetailModal} from '../../modals/newDetail';
 import {UseGeolocationStatus} from '../../../../common/hooks/useGeolocationStatus';
 import {ParkingListModal} from '../../modals/parkingsList';
+import openMap from 'react-native-open-maps';
 
 const NewsScreen = ({navigation, route}) => {
   const {longitude, latitude} = UseGeolocationStatus();
@@ -27,6 +28,17 @@ const NewsScreen = ({navigation, route}) => {
 
   const parkingModalConfig = {
     component: ParkingListModal,
+    props: {
+      latitude,
+      longitude,
+      onPressItem: item => {
+        openMap({
+          end: item.direction,
+          query: item.title,
+          // provider: 'google',
+        });
+      },
+    },
   };
 
   const showModal = () => {
@@ -41,7 +53,6 @@ const NewsScreen = ({navigation, route}) => {
   };
 
   const showParkingModal = () => {
-    parkingModalConfig.props = {longitude, latitude};
     setConfig(parkingModalConfig);
     setShowBottomSwipeModal(true);
   };
