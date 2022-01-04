@@ -6,8 +6,10 @@ import {Dimensions, StyleSheet, View} from 'react-native';
 import {UserIcon} from '../../atoms/icons/user';
 import FloatingButton from '../../atoms/floatingButton';
 import {ChevronRightIcon} from '../../atoms/icons/chevronRight';
+import RefreshAreaLayout from '../../atoms/refreshAreaLayout';
 
 const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const NewsTemplate = ({
   posterImage,
@@ -17,33 +19,35 @@ const NewsTemplate = ({
   onSelectParkingSearcher = () => {},
 }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.posterContainer}>
-        <Poster src={posterImage} />
-        <IconButton
-          style={styles.floatingButton}
-          icon={{component: UserIcon}}
-          color={'#c9c8c8'}
-          onPress={onSelectProfile}
-        />
-        <View style={styles.floatingParkingButtonContainer}>
-          <FloatingButton
-            style={styles.floatingParkingButton}
-            text={'Encuentra tu parking'}
-            icon={{component: ChevronRightIcon}}
-            onPress={onSelectParkingSearcher}
+    <RefreshAreaLayout>
+      <View style={styles.container}>
+        <View style={styles.posterContainer}>
+          <Poster src={posterImage} />
+          <IconButton
+            style={styles.floatingButton}
+            icon={{component: UserIcon}}
+            color={'#c9c8c8'}
+            onPress={onSelectProfile}
           />
+          <View style={styles.floatingParkingButtonContainer}>
+            <FloatingButton
+              style={styles.floatingParkingButton}
+              text={'Encuentra tu parking'}
+              icon={{component: ChevronRightIcon}}
+              onPress={onSelectParkingSearcher}
+            />
+          </View>
         </View>
+        <NewsList list={list} onSelectItem={onSelectNew} />
       </View>
-      <NewsList list={list} onSelectItem={onSelectNew} />
-    </View>
+    </RefreshAreaLayout>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
+    width: windowWidth,
+    height: windowHeight,
     flex: 1,
     flexDirection: 'column',
   },
