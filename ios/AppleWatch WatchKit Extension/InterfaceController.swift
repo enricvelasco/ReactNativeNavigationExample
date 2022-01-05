@@ -13,6 +13,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
   @IBOutlet weak var firstLabel: WKInterfaceLabel!
   
+  @IBOutlet weak var firstButton: WKInterfaceButton!
+  
+  @IBOutlet weak var sendMessageButton: WKInterfaceButton!
   
   var session: WCSession?
 
@@ -35,5 +38,23 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
       let text = message["message"] as? String
       self.firstLabel.setText(text)
     }
+  
+  @IBAction func firstButtonAction() {
+    print("ACTION_BUTTON_PUSHED");
+    // self.firstLabel.setText("HOLAAA")
+    
+    let message = ["message": "Test"]
+    WCSession.default.sendMessage(message, replyHandler: nil, errorHandler: { (err) in
+        debugPrint(err)
+    })
+    
+    /*if WCSession.default.isReachable {
+        let message = ["message": "Test"]
+        WCSession.default.sendMessage(message, replyHandler: nil, errorHandler: { (err) in
+            debugPrint(err)
+        })
+    }*/
+  }
+  
 
 }

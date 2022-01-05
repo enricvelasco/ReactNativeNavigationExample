@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, FlatList, Dimensions, ScrollView} from 'react-native';
+import {StyleSheet, View, Dimensions, ScrollView} from 'react-native';
 import NewArticle from '../../molecules/newArticle';
 
 const windowWidth = Dimensions.get('window').width;
@@ -9,8 +9,9 @@ const NewsList = ({list, onSelectItem = () => {}}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
-        {list.map(item => (
+        {list.map((item, key) => (
           <NewArticle
+            key={key}
             style={styles.article}
             title={item.title}
             description={item.description}
