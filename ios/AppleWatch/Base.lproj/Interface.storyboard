@@ -13,13 +13,18 @@
                     <items>
                         <textField width="1" height="46" alignment="left" text="Message:" id="NVu-F8-GGh"/>
                         <label alignment="left" text="my message" id="xuJ-cr-0xm"/>
+                        <button width="1" alignment="left" title="Go to page 2" id="4z5-gX-Qet">
+                            <connections>
+                                <segue destination="LYK-vW-J7t" kind="push" id="ync-wL-0wz"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="firstLabel" destination="xuJ-cr-0xm" id="rk1-FJ-0cL"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="214" y="345"/>
+            <point key="canvasLocation" x="195" y="219"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -32,7 +37,6 @@
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
                         <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
                     </connections>
                 </notificationController>
             </objects>
@@ -48,9 +52,43 @@
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="AppleWatch" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="AppleWatch" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="page2" id="J0Q-96-Dz9"/>
+                        <button width="1" alignment="left" title="Send message to device" id="T3p-Ek-kUT"/>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="767" y="592"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="3BQ-3C-3zS">
+            <objects>
+                <controller title="Message" id="LYK-vW-J7t" customClass="InterfaceController" customModule="AppleWatch" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Send message" id="Eee-x5-68A">
+                            <connections>
+                                <action selector="firstButtonAction" destination="LYK-vW-J7t" id="xNb-VW-xqV"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="sendMessageButton" destination="Eee-x5-68A" id="G6V-bK-aGo"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="513" y="57"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="VFu-Md-gHe">
+            <objects>
+                <controller id="C9R-rx-wc6">
+                    <items>
+                        <button width="1" alignment="left" title="Button" id="ZbZ-wE-1p4"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="236" y="-74"/>
         </scene>
     </scenes>
 </document>

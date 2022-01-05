@@ -7,6 +7,7 @@ import {NewDetailModal} from '../../modals/newDetail';
 import {UseGeolocationStatus} from '../../../../common/hooks/useGeolocationStatus';
 import {ParkingListModal} from '../../modals/parkingsList';
 import openMap from 'react-native-open-maps';
+import {watchEvents} from 'react-native-watch-connectivity';
 
 const NewsScreen = ({navigation, route}) => {
   const {longitude, latitude} = UseGeolocationStatus();
@@ -56,6 +57,11 @@ const NewsScreen = ({navigation, route}) => {
     setConfig(parkingModalConfig);
     setShowBottomSwipeModal(true);
   };
+
+  watchEvents.on('message', data => {
+    // Emits an array of user info which will include any user info received before the React Native app initialises.
+    console.log('EVENT_FROM_WATHC', data);
+  });
 
   return (
     <NewsTemplate
